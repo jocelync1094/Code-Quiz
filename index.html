@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+    <title>Code Quiz</title>
+  </head>
+
+  <body>
+    <head>
+        <div id="view-highscore">View High Score</div>
+        <div id="count-down-timer">Timer = 0</div>
+    </head>
+    <main>
+        <button id="start">Start Quiz</button>
+        <div id="quiz-container" style="display:none">
+            <div id="question"></div>
+            <div id="choices">
+                <div class="choice" id="A"></div>
+                <div class="choice" id="B"></div>
+                <div class="choice" id="C"></div>
+                <div class="choice" id="D"></div>                
+            </div>
+        </div>
+        <div id="score-container" style="display:none">
+            <div id="final score"></div>
+            <form id="player-intials"></form>
+        </div>
+        <div id="high-score-container" style="display:none">
+            <div>
+                <p>High-Score</p>
+                <ul id="high-score-list"></ul>
+            </div>
+            <button>Go Back</button>
+            <button>Clear High Scores</button>
+        </div>        
+    </main>
+    <script src="./questions.js"></script>
+  </body>
+</html>
