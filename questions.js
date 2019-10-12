@@ -26,9 +26,11 @@ var questions = [
         answer: "<script>"
     },
   ];
+  var questionNumber;
 
 // Selecting our elements
   var startBtn = document.querySelector("#start");
+  var quizContainer=document.querySelector("#quiz-container")
   var allChoicesBtn = document.querySelector("#choices");
   var questionID = document.querySelector("#question");
   var aBtn = document.querySelector("#A")
@@ -42,9 +44,18 @@ startBtn.addEventListener("click",quizBegins);
 
 function quizBegins (){
     startBtn.style="display:none";
-    var questionsIndex = 0;
+    quizContainer.style="display:block";
+    questionNumber = 0;
+    insertQuestionChoices(questionNumber);
 }
 
+function insertQuestionChoices (questionNumber) {
+    questionID.textContent=questions[questionNumber].title;
+    aBtn.textContent=questions[questionNumber].choices[0];
+    bBtn.textContent=questions[questionNumber].choices[1];
+    cBtn.textContent=questions[questionNumber].choices[2];
+    dBtn.textContent=questions[questionNumber].choices[3];  
+}
 
 
 //Changing to the next question
