@@ -50,6 +50,7 @@ var initialsInput = document.querySelector("#inputPassword2");
 var highScoreList = document.querySelector("#high-score-list");
 var highScoreContainer = document.querySelector("#high-score-container");
 var goBackBtn = document.querySelector("#go-back");
+var clearBtn = document.querySelector("#clear");
 
 
 //start
@@ -228,5 +229,12 @@ goBackBtn.addEventListener("click", function (){
   startBtn.style="display:block";
 })
 
+//clear highscore button
 
+clearBtn.addEventListener("click", function (){
+  localStorage.removeItem("initials");
+  localStorage.removeItem("score");
 
+  highscorelist=[];
+  renderhighscore();
+})
