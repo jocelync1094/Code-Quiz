@@ -34,6 +34,7 @@ var score = 75;
 // Selecting our elements
 var startBtn = document.querySelector("#start");
 var quizContainer=document.querySelector("#quiz-container")
+var scoreContainer = document.querySelector("#score-container")
 var allChoicesBtn = document.querySelector("#choices");
 var questionID = document.querySelector("#question");
 var aBtn = document.querySelector("#A")
@@ -42,6 +43,7 @@ var cBtn = document.querySelector("#C")
 var dBtn = document.querySelector("#D")
 var choiceClass =document.querySelector(".choice");
 var timer = document.querySelector("#count-down-timer");
+var yourScore = document.querySelector("#your-score");
 
 //start
 startBtn.addEventListener("click",quizBegins);
@@ -62,6 +64,9 @@ function timerCountDown (){
 
       if(totalTime===0){
       clearInterval(timerInterval);
+      }
+      if(questionNumber===questions.length){
+        clearInterval(timerInterval);
       }
       
   },1000);
@@ -101,7 +106,8 @@ function nextQuestion (){
     return;
   } else {
     quizContainer.style ="display:none";
-    
+    scoreContainer.style="display:inline-block";
+    yourScore.textContent="Your final score is: " + score;
   }
   
 
