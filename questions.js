@@ -30,7 +30,7 @@ var questionNumber;
 var totalTime = 15*questions.length;
 var questionTimer =15;
 var score = 75;
-var highscorelist = [];
+
 
 // Selecting our elements
 var startBtn = document.querySelector("#start");
@@ -170,19 +170,25 @@ function checkAnswers(event) {
 
 myForm.addEventListener("submit",function (){
   event.preventDefault();
+  
   var initials = initialsInput.value;
 
   highscorelist.push(initials);
   initialsInput.value = "";
   localStorage.setItem("initials", JSON.stringify(highscorelist));
   console.log(highscorelist);
+  
   scoreContainer.style="display:none";
   questionTimer = 0;
   highScoreContainer.style="display:block";
-  getStoredInitials();
+  
+  renderhighscore();
 })
 
 // rendering my high-score list
+var highscorelist = [];
+
+getStoredInitials();
 
 function renderhighscore() {
   highScoreList.innerHTML = "";
