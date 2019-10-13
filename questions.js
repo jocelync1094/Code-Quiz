@@ -31,6 +31,7 @@ var totalTime = 15*questions.length;
 var questionTimer =15;
 var score = 75;
 
+
 // Selecting our elements
 var startBtn = document.querySelector("#start");
 var quizContainer=document.querySelector("#quiz-container")
@@ -109,9 +110,11 @@ function nextQuestion (){
     clearInterval(questionInterval);
     return;
   } else {
+    
     quizContainer.style ="display:none";
     scoreContainer.style="display:inline-block";
     yourScore.textContent="Your final score is: " + score;
+    return;
   }
   
 
@@ -128,6 +131,11 @@ function questionCountDown() {
       nextQuestion();
       clearInterval(questionInterval);
       }
+      if(questionNumber>=questions.length){
+        clearInterval(questionInterval);
+        return;
+      }
+
       
   },1000);
 }
@@ -163,10 +171,7 @@ myForm.addEventListener("submit",function (){
   var initials = initialsInput.value;
   localStorage.setItem("initials", initials);
   scoreContainer.style="display:none";
+  questionTimer = 0;
   highScoreContainer.style="display:block";
-  console.log(scoreContainer.style);
-
 })
-
-
 
