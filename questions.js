@@ -174,9 +174,11 @@ myForm.addEventListener("submit",function (){
   var initials = initialsInput.value;
 
   highscorelist.push(initials);
+  totalScoreList.push(score);
   initialsInput.value = "";
   localStorage.setItem("initials", JSON.stringify(highscorelist));
-  console.log(highscorelist);
+  localStorage.setItem("score", JSON.stringify(totalScoreList));
+
   
   scoreContainer.style="display:none";
   questionTimer = 0;
@@ -187,6 +189,7 @@ myForm.addEventListener("submit",function (){
 
 // rendering my high-score list
 var highscorelist = [];
+var totalScoreList =[];
 
 getStoredInitials();
 
@@ -195,9 +198,10 @@ function renderhighscore() {
   
   for (var i = 0; i < highscorelist.length; i++) {
     var highscore = highscorelist[i];
+    var scorelisting = totalScoreList[i];
 
     var li = document.createElement("li");
-    li.textContent = highscore;
+    li.textContent = highscore + "-" + scorelisting;
 
     highScoreList.appendChild(li);
   }
@@ -207,9 +211,11 @@ function renderhighscore() {
 function getStoredInitials() {
   
   var storedHighScores = JSON.parse(localStorage.getItem("initials"));
+  var storedUserScores = JSON.parse(localStorage.getItem("score"));
 
-  if (storedHighScores !== null) {
+  if (storedHighScores !== null && storedUserScores !== null) {
     highscorelist = storedHighScores;
+    totalScoreList = storedUserScores;
   }
 
   renderhighscore();
