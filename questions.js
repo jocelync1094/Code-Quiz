@@ -44,6 +44,8 @@ var dBtn = document.querySelector("#D")
 var choiceClass =document.querySelector(".choice");
 var timer = document.querySelector("#count-down-timer");
 var yourScore = document.querySelector("#your-score");
+var initialsInput = document.querySelector("#inputPassword2");
+var submitBtn = document.querySelector(".submit-btn");
 
 //start
 startBtn.addEventListener("click",quizBegins);
@@ -152,3 +154,13 @@ function checkAnswers(event) {
     console.log(score);
   }
 }
+// storing initials in local storages
+
+submitBtn.addEventListener("click",function (){
+  var initials = initialsInput.value;
+  localStorage.setItem("initials", initials);
+
+})
+
+
+
