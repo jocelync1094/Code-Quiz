@@ -7,25 +7,50 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 
     
     <title>Code Quiz</title>
   </head>
 
   <body>
-    <head>
+    <header>
         <div id="view-highscore">View High Score</div>
         <div id="count-down-timer">Timer = 0</div>
-    </head>
+    </header>
     <main>
-        <button id="start">Start Quiz</button>
+        <div id="start-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron">
+                        <h1 class="display-4">Coding Quiz</h1>
+                        <p class="lead">This is a simple test to see if you're paying attention to class.</p>
+                        <hr class="my-4">
+                        <p>Click below to get started.</p>
+                        <a class="btn btn-primary btn-lg" href="#" role="button" id="start">Start</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="quiz-container" style="display:none">
-            <div id="question"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="question"></div>
+                </div>
+            </div>
             <div class="score-start" id="choices">
-                <button class="choice" id="A"></button>
-                <button class="choice" id="B"></bitton>
-                <button class="choice" id="C"></button>
-                <button class="choice" id="D"></button>                
+                <div class="row">
+                    <button type="button" class="choice btn btn-primary" id="A"></button>
+                </div>
+                <div class="row">
+                    <button type="button" class="choice btn btn-primary" id="B"></button>
+                </div>
+                <div class="row">
+                    <button type="button" class="choice btn btn-primary" id="C"></button>
+                </div>
+                <div class="row">v
+                    <button type="button" class="choice btn btn-primary" id="D"></button>
+                </div>
             </div>
         </div>
         <div id="score-container" style="display:none">
@@ -47,8 +72,8 @@
         </div>
         <div id="high-score-container" style="display:none">
             <div>
-                <p>High-Score</p>
-                <ul id="high-score-list"></ul>
+                <p id="myfont">High-Score</p>
+                <ul class="list-group" id="high-score-list"></ul>
             </div>
             <button id="go-back">Go Back</button>
             <button id="clear">Clear High Scores</button>

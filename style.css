@@ -1,0 +1,41 @@
+header {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    font-size:20px;
+    margin: 20px;
+}
+
+#start-container{
+    display:flex;
+    justify-content:center;
+}
+
+.display-4{
+    text-align:center;
+}
+
+p {
+    text-align:center;
+}
+
+.btn {
+    margin: 0 200px;
+}
+
+#quiz-container {
+    display:flex;
+    flex-direction:column;
+}
+
+.choice {
+    margin: 5px 50px;
+}
+
+#question {
+    font-size:36px;
+}
+
+#myfont {
+    font-size: 36px;
+}

@@ -34,6 +34,7 @@ var score = 75;
 
 // Selecting our elements
 var startBtn = document.querySelector("#start");
+var startContainer = document.querySelector("#start-container")
 var quizContainer=document.querySelector("#quiz-container")
 var scoreContainer = document.querySelector("#score-container")
 var allChoicesBtn = document.querySelector("#choices");
@@ -51,15 +52,17 @@ var highScoreList = document.querySelector("#high-score-list");
 var highScoreContainer = document.querySelector("#high-score-container");
 var goBackBtn = document.querySelector("#go-back");
 var clearBtn = document.querySelector("#clear");
-
+var highScoreLink = document.querySelector("#view-highscore");
 
 //start
 startBtn.addEventListener("click",quizBegins);
 
 function quizBegins (){
-  startBtn.style="display:none";
-  quizContainer.style="display:block";
+  startContainer.style="display:none";
+  quizContainer.style="display:flex";
   questionNumber = 0;
+  totalTime=75;
+  score=75;
   timerCountDown();
   insertQuestionChoices(questionNumber);
   questionCountDown();
@@ -203,7 +206,8 @@ function renderhighscore() {
 
     var li = document.createElement("li");
     li.textContent = highscore + "-" + scorelisting;
-
+    li.setAttribute("class","list-group-item");
+    
     highScoreList.appendChild(li);
   }
 }
@@ -226,7 +230,7 @@ function getStoredInitials() {
 
 goBackBtn.addEventListener("click", function (){
   highScoreContainer.style="display:none";
-  startBtn.style="display:block";
+  startContainer.style="display:flex";
 })
 
 //clear highscore button
@@ -238,3 +242,4 @@ clearBtn.addEventListener("click", function (){
   highscorelist=[];
   renderhighscore();
 })
+
